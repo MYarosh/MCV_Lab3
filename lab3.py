@@ -68,7 +68,7 @@ percentage = F.softmax(output, dim=1)[0] * 100.0
 
 #Вывод результатов в консоль
 print("{} most probable classes for {}:".format(CLASSES, namespace.file))
-for idx in indices[0][:5]:
+for idx in indices[0][:CLASSES]:
     print('{}: {:.3f}%'.format(classes[idx], percentage[idx].item()))
 
 #Вывод максимума используемой памяти 
@@ -108,7 +108,7 @@ for i in range(5):
 
     #Вывод результатов в консоль
     print("{} most probable classes for {}:".format(CLASSES, namespace.file))
-    for idx in indices[0][:5]:
+    for idx in indices[0][:CLASSES]:
         print('{}: {:.3f}%'.format(classes[idx], percentage[idx].item()))
     print("")
 print("Mean predict time {}\n".format(times/5))
